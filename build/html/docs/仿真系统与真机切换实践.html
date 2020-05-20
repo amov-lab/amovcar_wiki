@@ -103,14 +103,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id11">1.4 真机检查</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arducar">1.5  室内ArduCar测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id12">1.5  小车校准</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">校准方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">根据提示校准加速度计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">罗盘（指南针）校准</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">遥控器校准</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#arducar">1.6  室内ArduCar测试</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cartographer-slam">cartographer_slam</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#apm-vfh-slam-sh">apm_vfh_slam.sh</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rtabmap">rtabmap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#navigation">navigation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">1.6  简单应用例程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id17">1.7  简单应用例程</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cartographert265imu">cartographer融合t265imu数据进行建图</a></li>
 </ul>
 </li>
@@ -280,8 +287,80 @@ $ ./t265_autoload.sh
 </div>
 <p>通过终端打印的相关错误信息解决该问题。</p>
 </div>
+<div class="section" id="id12">
+<h2>1.5  小车校准<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>收到小车后，首先检查设备时候齐全完好无损，然后开启遥控器，拿出小车，打开小车电源，等待小车飞控成功启动后。左手拨杆向前，查看小车是否能够正常行驶。若不能前进，则可能是运输过程中传感器受到干扰，需要进行校准。
+进行校准，我们需要使用软件工具MissionPlanner，如果暂时还没有安装的，请自行下载安装。</p>
+<div class="section" id="id13">
+<h3>校准方法<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>1.直接拿着车校准，不对小车进行任何拆卸。(小车虽然有点小重，根据亲生经历，这边还是建议抱着车进行校准。)</p>
+<p>2.单独拆下飞控和GPS，拿着飞控和GPS单独进行校准。，拆除步骤如下（拆下前可以先拍照记下接口接的位置）</p>
+<p>1）先拆掉上层螺丝</p>
+<img alt="../_images/calibration_1.png" src="../_images/calibration_1.png" />
+<p>2）拍照记录记下线的位置（小车配置不同，线可能会增加或减少</p>
+<img alt="../_images/calibration_2.png" src="../_images/calibration_2.png" />
+<p>3）需要拔下的线（我以上面照片为例，拔掉线是为了不妨碍，接下来下面拆下安装飞控的碳板。配置不同需要拔掉的线可能会增加或者减少）</p>
+<img alt="../_images/calibration_3.png" src="../_images/calibration_3.png" />
+<p>4）取下飞控进行校准（取下如图飞控和GPS）</p>
+<img alt="../_images/calibration_4.png" src="../_images/calibration_4.png" />
+<p>5）将飞控与电脑用USB线连接，打开MissionPlanner，选择端口连上飞控（电脑正常连接飞控后会出现comcom口，选中并点击右边连接即可）</p>
+<img alt="../_images/calibration_5.png" src="../_images/calibration_5.png" />
+</div>
+<div class="section" id="id14">
+<h3>根据提示校准加速度计<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>飞控箭头为正向，即箭头左为左，箭头右为右。在机体上校准比较好（装在机架上时候的水平状态才是真正的水平，这时候校正的水平才是最准确)。</p>
+<p>建议：在机架上校正，一定要把飞行器放在很平的地面上进行，保证校正时候的水平状态的精确度。</p>
+<p>1.连接地面站（飞控自检完成后）</p>
+<p>2.点初始设置-可选硬件-校准加速度计</p>
+<img alt="../_images/calibration_6.png" src="../_images/calibration_6.png" />
+<p>3.开始校准加速度计，按照MP上的提示，飞控的每个面都会校准，位置放好后千万不要动，以免校准失败，点击完成时点击选型，进行下一个面的校准，最后校准成功会提示加速度计校准成功，否则提示失败（中间过程中若提示加速度没有计算，最后应该都会失败，放好后不要动）</p>
+<p>4.校正完后下面有一个水平校正，点击进行，校准过程中不要移动飞控一般不会有问题</p>
+</div>
+<div class="section" id="id15">
+<h3>罗盘（指南针）校准<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>（全方位旋转小车或飞控。只选择使用第一个指南针，这样校准方便一些。也可以选择前两个，则转动的时间次数可能会多一些。</p>
+<p>校准步骤如下：</p>
+<p>1.连接飞控。</p>
+<p>2.初始设置-必要硬件-罗盘</p>
+<p>3.只勾选第一个，（如需提高精度也可添加外置罗盘）准备好后点击开始现场校准</p>
+<img alt="../_images/calibration_7.png" src="../_images/calibration_7.png" />
+<p>4.进行校准</p>
+<p>方法：每个面绕其中心轴旋转360度，校准过程中注意千万不要碰到USB线，以免断开飞控。</p>
+<p>5.校准完后，界面会有新的三轴的值，绿色值表示正常。</p>
+<img alt="../_images/calibration_8.png" src="../_images/calibration_8.png" />
+<p>6.注意事项</p>
+<p>（1）在室内会做校正罗盘时候，室内设备会对地磁产生干扰影响罗盘精度，如需提高精度建议在室外做一次。</p>
+<p>（2）APM内置的罗盘很容易受到飞控内电子元件干扰，还有电池、接收机等其它的干扰，如果用外置的罗盘的话精度会增加不少。</p>
+<p>（3）在飞行器重新布线、升级固件、添加或者换设备时候，建议重新做一次校正罗盘。</p>
+</div>
+<div class="section" id="id16">
+<h3>遥控器校准<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>1.遥控器通道配置</p>
+<p>通道1：roll(横滚)</p>
+<p>通道2：pitch(俯仰)</p>
+<p>通道3：throttle（油门）</p>
+<p>通道4：yaw（偏航）</p>
+<p>通道5：飞行模式（辅助通道，具体可见遥控器辅助通道及失控保护）</p>
+<p>美国手：左手油门（遥控器系统设置中的摇杆模式为2）</p>
+<p>日本手：右手油门</p>
+<p>2.开始遥控器校准（以美国手为例）</p>
+<p>（1）连接地面站（飞控自检完成后）</p>
+<p>（2）卸载螺旋桨，初始设置-可选硬件-遥控器校准</p>
+<img alt="../_images/calibration_9.png" src="../_images/calibration_9.png" />
+<p>（3）打开遥控器，确认已接上接收机。</p>
+<p>（4）来回拨动遥控器的开关，使每个档位分别到达其最大和最小，MP遥控通道上红色线条的显示，让地面站记录其最大行程和最小行程。</p>
+<p>（这里要保证油门上推，代表油门的绿色条也向上，roll和Yaw也是，pitch相反，如果不是，可在遥控器的舵机相位中修改正反相）</p>
+<p>（5）点击完成，会出现各通道值。</p>
+<p>（6）观测遥控器行程，最小值小于1100，最大值大于1900，则遥控器正常。</p>
+<img alt="../_images/calibration_10.png" src="../_images/calibration_10.png" />
+<p>3.注意事项</p>
+<p>1）如果摇动遥控器控制杆时候校正条没反应，需要重新检查：（1）接收机是否已经连接到飞控，接线是否有错。（2）遥控器与接收机是否对好码。</p>
+<p>2）如果控制杆的通道与校正条不一致的时候（如摇动油门杆时候Pitch的校正条变化），请设置遥控器的左右手模式。</p>
+<p>3）第五通道（辅助通道）用于切换飞行模式，也需要校正第五通道，但每个遥控器设置第五通道用于飞行模式都有差别</p>
+</div>
+</div>
 <div class="section" id="arducar">
-<h2>1.5  室内ArduCar测试<a class="headerlink" href="#arducar" title="Permalink to this headline">¶</a></h2>
+<h2>1.6  室内ArduCar测试<a class="headerlink" href="#arducar" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>按下小何电源按钮以及板载计算机开机键，启动ArduCar</li>
 <li>启动遥控器，保证小车能正常运行</li>
@@ -358,8 +437,8 @@ $ ./t265_autoload.sh
 </div>
 </div>
 </div>
-<div class="section" id="id12">
-<h2>1.6  简单应用例程<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h2>1.7  简单应用例程<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cartographert265imu">
 <h3>cartographer融合t265imu数据进行建图<a class="headerlink" href="#cartographert265imu" title="Permalink to this headline">¶</a></h3>
 <p>首先要对cartographer以及t265做一个简单的了解</p>
