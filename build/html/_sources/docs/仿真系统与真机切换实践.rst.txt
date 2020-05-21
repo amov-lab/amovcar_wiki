@@ -379,9 +379,66 @@ rtabmap
 navigation
 --------------
 
+使用navigation需要先建立一张地图，先使用前面的建图脚本cartographer_slam.sh在小车运行的环境中建出一张较好的地图，然后打开终端
+输入以下命令将地图保存在maps文件中。
+
 ::
 
-        $ ./
+        $ cd /Arducar/src/sup/path_planning/ros_navigation/maps
+        $ rosrun map_server map_saver -f map
+
+接下来就可以运行导航的脚本
+
+::
+
+        $ ./apm_navigation.sh
+
+输入该命令即可启动导航功能会弹出终端以及rviz界面，该功能需要激光雷达以及t265传感器,需要在rviz中设置小车起始点以及导航目标点，所以必须要有NoMachine
+远程连接到小车的板载计算机。
+
+.. image:: ../images/nav_1.png
+
+.. image:: ../images/nav_rviz.png
+
+首先在Mission Planner中设置小车起始点，在任意一个位置点击鼠标右键，根据如图所示点击Set Ekf Origin Here,出现紫色小车，只有设置了起始点才能够
+切换到guide模式，ROS的控制命令才能传递到飞控板。
+
+.. image:: ../images/set_ekf.png
+
+回到rviz中，根据小车的在实际环境中的位姿，使用2D_pose插件在地图上设置小车初始点，鼠标左键点击小车初始位置并长按，移动鼠标将箭头方向指向小车的
+正前方，设置不准确可多次调整，直至激光数据与地图数据较为匹配，如图所示
+
+- 2D pose 插件
+
+.. image:: ../images/2D_pose.png
+
+使激光数据匹配地图，达到如图所示的效果
+
+.. image:: ../images/scan_map.png
+
+当初始位姿调整好之后，就可以使用遥控器控制小车以较慢的角速度旋转直至定位粒子收缩得较为密集，如图所示
+
+.. image:: ../images/pose_1.png
+
+当机器人定位粒子收敛较好时，便可以通过2D Nav Goal插件给小车发布导航目标点，设置方式与前面的设置小车初始点一致
+
+.. image:: ../images/2D_goal.png
+
+.. note::
+
+        需要使用遥控器切换为guide模式才可以使ROS的控制命令传递到飞控板
+
+接下来小车便会自动前往目标点，并能够自主避障
+
+- 全局路径
+
+.. image:: ../images/global_path.png
+
+- 本地路径
+
+.. image:: ../images/local_path.png
+
+
 
 1.7  简单应用例程
 ========================
