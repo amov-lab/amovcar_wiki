@@ -362,11 +362,12 @@ $ ./t265_autoload.sh
 <div class="section" id="arducar">
 <h2>1.6  室内ArduCar测试<a class="headerlink" href="#arducar" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>按下小何电源按钮以及板载计算机开机键，启动ArduCar</li>
-<li>启动遥控器，保证小车能正常运行</li>
+<li>按下小车电源按钮以及板载计算机开机键，启动ArduCar</li>
+<li>启动遥控器</li>
 </ul>
 <img alt="../_images/joy_1.jpg" src="../_images/joy_1.jpg" />
 <img alt="../_images/joy.png" src="../_images/joy.png" />
+<p>这个时候就可以通过使用遥控器控制小车移动，查看小车运行是否正常。</p>
 <ul class="simple">
 <li>远程计算机连接到ArduCar的wifi</li>
 <li>启动Mission Planner连接到飞控端</li>
@@ -374,6 +375,17 @@ $ ./t265_autoload.sh
 <img alt="../_images/MP_1.png" src="../_images/MP_1.png" />
 <p>端口号为6000</p>
 <img alt="../_images/MP_port.png" src="../_images/MP_port.png" />
+<p>这个时候就可以通过地面站Mission Planner控制小车按照航点运动。</p>
+<p>首先在Mission Planner中设置小车起始点，在任意一个位置点击鼠标右键，根据如图所示点击Set Ekf Origin Here,出现紫色小车说明位姿设置成功</p>
+<img alt="../_images/auto_1.png" src="../_images/auto_1.png" />
+<p>设置好小车初始点后，点击左上方的飞行计划，进入航点设置界面，将鼠标移动到你想要小车前往的位置，点击鼠标左键即可设置航点。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">因在室内进行小车测试，请用鼠标滚轮将界面放到最大，否则航点距离非常远，可在左上角查看航点距离数据。</p>
+</div>
+<img alt="../_images/auto_2.png" src="../_images/auto_2.png" />
+<p>设置好航点之后点击界面右边的写入航点，再用遥控器将小车切换为Auto模式，小车即可自动前往航点。</p>
+<img alt="../_images/auto_3.png" src="../_images/auto_3.png" />
 <ul class="simple">
 <li>启动NoMachine等远程连接工具</li>
 </ul>
@@ -446,10 +458,7 @@ $ rosrun map_server map_saver -f map
 远程连接到小车的板载计算机。</p>
 <img alt="../_images/nav_1.png" src="../_images/nav_1.png" />
 <img alt="../_images/nav_rviz.png" src="../_images/nav_rviz.png" />
-<p>首先在Mission Planner中设置小车起始点，在任意一个位置点击鼠标右键，根据如图所示点击Set Ekf Origin Here,出现紫色小车，只有设置了起始点才能够
-切换到guide模式，ROS的控制命令才能传递到飞控板。</p>
-<img alt="../_images/set_ekf.png" src="../_images/set_ekf.png" />
-<p>回到rviz中，根据小车的在实际环境中的位姿，使用2D_pose插件在地图上设置小车初始点，鼠标左键点击小车初始位置并长按，移动鼠标将箭头方向指向小车的
+<p>在rviz中，根据小车的在实际环境中的位姿，使用2D_pose插件在地图上设置小车初始点，鼠标左键点击小车初始位置并长按，移动鼠标将箭头方向指向小车的
 正前方，设置不准确可多次调整，直至激光数据与地图数据较为匹配，如图所示</p>
 <ul class="simple">
 <li>2D pose 插件</li>
@@ -463,7 +472,7 @@ $ rosrun map_server map_saver -f map
 <img alt="../_images/2D_goal.png" src="../_images/2D_goal.png" />
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">需要使用遥控器切换为guide模式才可以使ROS的控制命令传递到飞控板</p>
+<p class="last">只有在Mission Planner设置了起始点才能够切换到guide模式,切换为guide模式才可以使ROS的控制命令传递到飞控板</p>
 </div>
 <p>接下来小车便会自动前往目标点，并能够自主避障</p>
 <ul class="simple">
