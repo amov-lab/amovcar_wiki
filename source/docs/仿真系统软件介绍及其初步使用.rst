@@ -31,7 +31,6 @@ git  clone  http://gitea.amovlab.com/PrivateForAmovlab/ArduCar.git
 - 拷贝ardupilot源码压缩文件到home目录,具体操作请看tar.gz 文件如何解压
 
 - 把我们提供的.bashrc 文件替换有的.bashrc文件home目录按Ctrl+H ，显示隐藏文件就可以看到设置系统环境的文件.bashrc文件，然后替换掉，确保环境变量统一。
---------------------------------------------------------------------------------
 
 - git clone https://github.com/khancyr/ardupilot_gazebo
 
@@ -46,17 +45,14 @@ git  clone  http://gitea.amovlab.com/PrivateForAmovlab/ArduCar.git
 - make -j4
 
 - sudo make install
----------------------------------------------------------------------------------
 
 - 在源码里面设置为编译软件仿真 ，在ardupilot目录  ./waf configure --board sitl 
 
 - ./waf rover 
----------------------------------------------------------------------------------
 
 - 安装MavProxy库：sudo pip2 install -U MavProxy
 
 - 安装pymavlink库：sudo pip2 install -U pymavlink 
----------------------------------------------------------------------------------
 
 - 仿真环境搭建可以参考Ardupilot：https://ardupilot.org/dev/docs/using-gazebo-simulator-with-sitl.html
 
@@ -70,7 +66,7 @@ https://item.taobao.com/item.htm?spm=a230r.1.14.267.7eef3d8dVPMgte&id=6118007763
 
 
 1.3 代码软件框架及其仿真系统框架
-=========================
+=============================================
 
 官方的文档仿真介绍：https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html#sitl-simulator-software-in-the-loop
 
@@ -107,7 +103,7 @@ ardupilot/Tools/autotest/sim_vehicle.py，这个文件就是启动了在PC中运
 
 
 1.5   无人车地面站规划模拟航线运行
-==========================
+================================================
 
 首先安装QGC地面站，在我们提供的工具包里面有。
 
@@ -122,12 +118,13 @@ ardupilot/Tools/autotest/sim_vehicle.py，这个文件就是启动了在PC中运
 - ./QGroundControl.AppImage  (or double click)
 
 .. image:: ../images/QGC.png
+
 运行成功
 
 
 
 1.6  GUIDE模式自动驾驶
-==========================
+=========================================
 
 用python给出了，该小车的位置控制Demo和速度控制Demo，这个pyton接口可以适配大部分路径规划的应用。大部分路径规划算法，最终收敛都是给无人车的执行机构发送期望的速度或者期望的位置。
 在仿真中：
