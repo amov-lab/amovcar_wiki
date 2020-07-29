@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>仿真系统软件硬件框架及其系统安装 &mdash; simulation_course 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="仿真系统软件介绍及其初步使用" href="仿真系统软件介绍及其初步使用.html" />
+    <link rel="prev" title="基于Ardupilot的Rover固件智能车开发" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> simulation_course
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第一章  仿真系统软件硬件框架及其系统安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1 系统概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.2 软件构架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.3 硬件要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">1.4 启动盘制作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">1.5 物理机单系统系统安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">1.6 物理机双系统安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usb">1.7 基于USB系统盘的直接使用</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="仿真系统软件介绍及其初步使用.html">第二章  仿真系统软件介绍及其初步使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ardupilot无人车仿真系统ROS与Gazebo基础使用.html">第三章  Ardupilot无人车仿真系统ROS与Gazebo基础使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ardupilot无人车仿真系统传感器添加与应用.html">第四章  Ardupilot无人车仿真系统传感器添加与应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="仿真系统与真机切换实践.html">第五章  仿真系统与真机切换实践操作</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">simulation_course</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>仿真系统软件硬件框架及其系统安装</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/仿真系统软件硬件框架及其系统安装.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>仿真系统软件硬件框架及其系统安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>1.1 系统概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>下面是这个无人车真开发的软件框架图，要理解这个软件框架图，要会ROS，有Gazebo使用经验，同时对Ardupilot软件框架有所理解，三维的软件仿真是利用了三维引擎(ORGE)，
+模拟出了无人车上的所有传感器设备，并且发布出了原始数据，交给了sim_vehicle.py这个Ardupilot软件仿真模块，sim_vehicle.py相当于在PC上运行的Ardupilot代码，区别在于单片机运行的Ardupilot代码传感器数据来自于真实的传感器数据，
+sim_vehicle.py的传感器数据来自于软件仿真生成的。</p>
+<p>Ardupilot 无人系统具备完善的功能，从数据链路，到地面站，主控硬件，和丰富可选的硬件设备，激光雷达，RTK等等。开源网站如下：<a class="reference external" href="https://ardupilot.org/">https://ardupilot.org/</a> 有详细介绍.</p>
+<blockquote>
+<div><img alt="../_images/Ardupilot.jpg" src="../_images/Ardupilot.jpg" />
+</div></blockquote>
+<p>他不是一个仅仅只是应用在实验场合，在无人机领域，在小型测量船领域都有大量工业应用案例。相比其他工业设备的价格高，Ardupilot 无人系统成本可控，外设传感器搭配灵活，可以实现不同功能。
+目前这套构架体系比较适合于小型物流无人车，在特定园区内部的运行，比如京东的无人物流车，美团的无人物流车，农业撒农药的无人车等等，大型的沙滩车也有一些改装案例，还有一些无人船等等。硬件成本相对价格比较低，
+软件框架扩展性比较好，在无人车的状态估计方面代码相对比较完善，视觉传感器设备也做到了一定程度的融合。路径规划方向和ROS接口做的也比较完善，ROS上面一些包可以直接用起来。</p>
+<p>同时我们提供了把所有开发环境都安装好的ISO环境，Ardupilot固件编译环境，ROS的系统环境，激光SLAM的代码工具环境等一些必要的工具，省去大家安装环境的问题，有些环境的安装非常麻烦，
+很多初学者因为安装环境的繁琐，耗费大量时间。这个ISO环境可以虚拟机安装，可以物理机安装，如果电脑的硬件配置一般的话没有显卡，推荐安装在物理机上，这个ISO镜像也可以安装双系统，但是不推荐安装在虚拟机上。</p>
+<p>关于课程：我们在制作这个课程的时候希望可以尽可能的降低研发的难度，包括硬件投入和软件开发的难度。只要有一台硬件配置还不错的电脑，就可以入手开发工作。会一些C/C ++ 语言，Python语言，懂一些ROS就可以
+着手与无人车的开发工作。我们想帮助更多的开发着加入到无人系统的开发工作中来，促进行业的发展。</p>
+<p>我们先从仿真入手，所有的例程都尽量配合三维仿真。无人系统开发三大方向：机构控制，环境感知，路径规划。这三大部分我们的无人车系统中都会涉及到，也都会有对应的仿真。核心的理念是即便没有真实的无人车硬件设备
+也可以入手开发工作。仿真开发和真实无人车的算法开发可以无缝衔接。底层控制，传感器，三维仿真模块相互分离。</p>
+<blockquote>
+<div><img alt="../_images/无人系统框架.jpg" src="../_images/无人系统框架.jpg" />
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>1.2 软件构架<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><img alt="../_images/SITL.jpg" src="../_images/SITL.jpg" />
+</div></blockquote>
+<p>其中的虚拟引擎技术，广泛用于游戏，可以模拟出一些真是环境的物理参数，比如光照，力学等。逐步用到无人系统开发的领域，目前无人车和无人机领域都大量用到了三维仿真，用于开发，缩短开发时间和提高开发效率。
+ROS作为流行的机器人开发平台，同时配合Gazebo仿真环境。Ardupilot也专门提供了在ubuntu环境用运行的模拟控制器sim_vehicle.py。</p>
+<p>下面从安装一个仿真系统环境开始介绍：</p>
+</div>
+<div class="section" id="id4">
+<h2>1.3 硬件要求<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>1 硬件配置尽可能高的PC一台，有无显卡均可，CPU最好4核8线程，安装固态硬盘(128G)就够了，内存8G以上(仿真软件比较耗费内存)。目前我们以英特尔的i7-8565U，是一个低压笔记本 CUP 八代i7,X86构架。整体重量也控制在400g左右，可用用来三维仿真，安装开发环境，也可以直接安装在大轴距的无人机或者无人车上。</li>
+</ul>
+<blockquote>
+<div><img alt="../_images/PC18565.jpeg" src="../_images/PC18565.jpeg" />
+</div></blockquote>
+<p>其他的笔记本，台式机都可以，如果要做复杂的大场景三维仿真，还是建议配置一个具有1080显卡的台式电脑，做三维视觉的仿真回比较好。</p>
+<ul class="simple">
+<li>2 下载我们提供的ISO镜像和烧写工具软件，rufus-3.6这是制作系统U盘的工具。</li>
+<li>3 一个8GB以上的U盘作为启动盘。</li>
+<li>4 下载我们的ISO安装镜像。地址如下：</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>1.4 启动盘制作<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>制作系统启动U盘：</dt>
+<dd>准备好系统烧写软件rufus-3.6和ISO系统镜像Ubuntu8.04.ISO。按照如下步骤开始烧写</dd>
+</dl>
+<ul class="simple">
+<li>打开系统烧写软件rufus,配置如下：</li>
+</ul>
+<img alt="../_images/step1.png" src="../_images/step1.png" />
+<ul class="simple">
+<li>点击确定</li>
+</ul>
+<img alt="../_images/step2.png" src="../_images/step2.png" />
+<ul class="simple">
+<li>选择以ISO镜像烧录</li>
+</ul>
+<img alt="../_images/step3.png" src="../_images/step3.png" />
+<ul class="simple">
+<li>烧录完毕后</li>
+</ul>
+<img alt="../_images/step4.png" src="../_images/step4.png" />
+</div>
+<div class="section" id="id6">
+<h2>1.5 物理机单系统系统安装<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>制作好系统启动盘以后，开始安装这个ISO镜像。和普通的U盘装机类似，设置系统从U盘启动，安装Ubuntu系统。安装双系统目前没有尝试过，我们是在一台电脑上直接安装了这个ISO镜像。如果把BIOS的Fast Boot取消，说不定可以安装成功。</p>
+<img alt="../_images/bios1.jpeg" src="../_images/bios1.jpeg" />
+<img alt="../_images/bios2.jpeg" src="../_images/bios2.jpeg" />
+<img alt="../_images/bios3.jpeg" src="../_images/bios3.jpeg" />
+<img alt="../_images/bios4.jpeg" src="../_images/bios4.jpeg" />
+<img alt="../_images/bios5.jpeg" src="../_images/bios5.jpeg" />
+<p>保存并且退出，选择系统安装。</p>
+<img alt="../_images/bios6.jpeg" src="../_images/bios6.jpeg" />
+<p>安装系统，设置好系统分区，安装图片所示。</p>
+<img alt="../_images/screenshot.png" src="../_images/screenshot.png" />
+<p>以上的是安装好的系统界面，这个系统预先安装好了ROS，Px4的编译环境，Gazebo等做仿真开发的必备软件，但是因为该ISO系统镜像不能大于4G的限制，我们在制作的时候删除了很多ubunut里面的预装软件，
+浏览器等，只保留了必要软件，在使用之前要安装一些软件。</p>
+<p>安装好之后，进入系统可以测试下环境，电脑密码是amov，进入终端：”cd  ~/project/some/Firmware ” , 进入PX4源码目录输入：” make px4_sitl_default gazebo “。</p>
+<img alt="../_images/gazebo.png" src="../_images/gazebo.png" />
+<p>可以看到如上的界面，说明初步编译通过，并且可以在gazebo看到一架无人机。在当前命令行里面输入”help”，可以看到目前支持的命令。输入:”commander  arm”，可以解锁无人机，输入:”commander takeoff ”
+无人机就可以初步飞起来。输入:” commander land” 无人机会降落下来。说明这个环境初步搭建完成，比较方便省去了繁琐环境搭建安装。</p>
+</div>
+<div class="section" id="id7">
+<h2>1.6 物理机双系统安装<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>同样是按照上面制作好的U盘系统盘，下面介绍如何安装双系统，准备一张256G硬盘，先安装好Win10系统，如何安装这里不多做描述，安装好Win10系统以后，在按照下面的步骤安装我们提供的Ubuntu镜像。
+最好划分100G左右的硬盘给Ubuntu。</p>
+<ul class="simple">
+<li>准备硬盘分区工具DiskGenius，提前给Ubuntu系统划分好系统分区。</li>
+</ul>
+<p>准备了如下的硬盘：</p>
+<img alt="../_images/headr.jpeg" src="../_images/headr.jpeg" />
+<p>250G的固态硬盘，M.2的硬盘，其他类型的硬盘和主板应该比较通用，这里不做一一尝试。有问题在论坛讨论区留言。</p>
+<p>准备DiskGenius这个硬盘分区工具，在课程对应的软件目录里面有。</p>
+<p>我们的用软件打开的系统分区如下：</p>
+<img alt="../_images/system2.png" src="../_images/system2.png" />
+<p>先在原有的win10磁盘中划分了100G的空闲硬盘区给下一步ubuntu实用。</p>
+<img alt="../_images/system1.png" src="../_images/system1.png" />
+<p>按照如上分区依次划分好EFI区(4GB)，SWAP区(8GB)，/目录区(EXT4 linux用户数据区)剩下的区。</p>
+<p>EFI 分区划分如下:</p>
+<img alt="../_images/EFI配置.png" src="../_images/EFI配置.png" />
+<p>另外两个分区类似，只不过类型和空间不同。三个分区划分完毕以后，点击保存。硬盘分区成功。关机断电，插上USB系统盘，进入系统安装界面，安装UBUNTU。</p>
+<ul class="simple">
+<li>这个方式试用于大多数电脑，我们本次讲解用的M2接口的固态硬盘。更详细的安装步骤在视频讲解里面。</li>
+</ul>
+</div>
+<div class="section" id="usb">
+<h2>1.7 基于USB系统盘的直接使用<a class="headerlink" href="#usb" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="仿真系统软件介绍及其初步使用.html" class="btn btn-neutral float-right" title="仿真系统软件介绍及其初步使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="基于Ardupilot的Rover固件智能车开发" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, shuangqi.mo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
