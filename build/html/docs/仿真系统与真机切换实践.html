@@ -124,7 +124,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#id25">遥控器控制</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id26">地面站控制</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id27">航点规划</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id28">视觉定位</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">视觉三维建图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#vfh">VFH避障</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id29">二维激光雷达建图</a></li>
 </ul>
@@ -409,14 +409,14 @@ $ ./t265_autoload.sh
 <p>室内基础版硬件主要包括车体，飞控以及WIFI数传。主要测试内容为</p>
 <p><a class="reference internal" href="#id25">遥控器控制</a></p>
 <p><a class="reference internal" href="#id26">地面站控制</a></p>
-<p><a class="reference internal" href="#id27">航点规划</a>。</p>
+<p><a class="reference internal" href="#id27">航点规划</a></p>
 </div>
 <div class="section" id="id20">
 <h3>1.6.2 基础版室内测试<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <p>室外基础版硬件在室内的基础上增加了板载计算机，主要测试内容为</p>
 <p><a class="reference internal" href="#id25">遥控器控制</a></p>
 <p><a class="reference internal" href="#id26">地面站控制</a></p>
-<p><a class="reference internal" href="#id27">航点规划</a>。</p>
+<p><a class="reference internal" href="#id27">航点规划</a></p>
 <p>在进行室内版测试时，需要连接到远程工具nomachine以后才可以进行。</p>
 <ul class="simple">
 <li>启动NoMachine等远程连接工具</li>
@@ -430,7 +430,7 @@ $ ./t265_autoload.sh
 </div>
 <div class="section" id="id21">
 <h3>1.6.3 基础版+D435I测试<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="#id28">视觉定位</a></p>
+<p><a class="reference internal" href="#id28">视觉三维建图</a></p>
 </div>
 <div class="section" id="id22">
 <h3>1.6.4 基础版+激光雷达测试<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
@@ -516,7 +516,7 @@ $ rosrun map_server map_saver -f map
 <img alt="../_images/auto_3.png" src="../_images/auto_3.png" />
 </div>
 <div class="section" id="id28">
-<h4>视觉定位<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<h4>视觉三维建图<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
 <p>首先进入sh脚本文件夹下</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /ArduCar/src/amovcar/sh
 </pre></div>
